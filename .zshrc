@@ -20,12 +20,12 @@ eval `gdircolors .dircolors`
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew)
+plugins=(git brew zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/local/bin:/usr/local/sbin:/usr/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/X11/bin:
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/sbin:/usr/bin:/bin:/sbin:/usr/X11/bin:
 alias l='ls -hlAF' # Fancy listing of files and directories
 alias grep='grep --color'
 alias genpw='~/Dropbox/git/scripts/generate_password.py'
@@ -37,4 +37,5 @@ alias pushforreview='git push origin HEAD:refs/for/production'
 alias ls='gls --color=auto'
 alias jhaals='vim /opt/boxen/repo/modules/people/manifests'
 source /usr/local/bin/virtualenvwrapper_lazy.sh
+
 [ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
