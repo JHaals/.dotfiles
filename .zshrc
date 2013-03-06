@@ -5,7 +5,6 @@ export EDITOR='vim'
 export LC_CTYPE='UTF-8'
 export LC_ALL='en_US.UTF-8'
 export FACTERLIB=~/lib/facter:$FACTERLIB
-eval `gdircolors .dircolors`
 # Set to this to use case-sensitive completion
 # export CASE_SENSITIVE="true"
 
@@ -36,6 +35,7 @@ alias macvim='open -a MacVim'
 alias pushforreview='git push origin HEAD:refs/for/production'
 alias ls='gls --color=auto'
 alias jhaals='vim /opt/boxen/repo/modules/people/manifests'
-source /usr/local/bin/virtualenvwrapper_lazy.sh
 
 [ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
+eval `gdircolors .dircolors`
+source /usr/local/bin/virtualenvwrapper_lazy.sh
