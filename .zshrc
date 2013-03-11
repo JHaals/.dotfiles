@@ -39,3 +39,4 @@ alias jhaals='vim /opt/boxen/repo/modules/people/manifests'
 [ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
 eval `gdircolors .dircolors`
 source /usr/local/bin/virtualenvwrapper_lazy.sh
+source secrets.sh
