@@ -1,4 +1,3 @@
-call pathogen#infect()
 syntax on
 filetype plugin indent on
 set backspace=2 " make backspace work like most other apps
@@ -12,6 +11,16 @@ set autoindent      " Indent same level as the previous line
 set smartindent
 map <F3> :set list!
 set title
+
+" disable arrow keys
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+imap <up> <nop>
+imap <down> <nop>
+imap <left> <nop>
+imap <right> <nop>
 
 " TABS
 set tabstop=4
@@ -73,3 +82,4 @@ autocmd WinLeave * setlocal nocursorline
 " On OSX
 vmap <D-c> y:call system("pbcopy", getreg("\""))<CR>
 nmap <D-v> :call setreg("\"",system("pbpaste"))<CR>p
+execute pathogen#infect()

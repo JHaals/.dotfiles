@@ -22,6 +22,7 @@ export FACTERLIB=~/lib/facter:$FACTERLIB
 plugins=(git brew zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
+unsetopt correct_all
 
 # Customize to your needs...
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/sbin:/usr/bin:/bin:/sbin:/usr/X11/bin:
@@ -39,4 +40,4 @@ alias jhaals='vim /opt/boxen/repo/modules/people/manifests'
 [ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
 eval `gdircolors .dircolors`
 source /usr/local/bin/virtualenvwrapper_lazy.sh
-source secrets.sh
+source .secrets.sh
