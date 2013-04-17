@@ -1,4 +1,5 @@
 syntax on
+execute pathogen#infect()
 filetype plugin indent on
 set backspace=2 " make backspace work like most other apps
 
@@ -69,12 +70,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
-autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-autocmd BufWinLeave * call clearmatches()
 
 " On OSX
 vmap <D-c> y:call system("pbcopy", getreg("\""))<CR>
 nmap <D-v> :call setreg("\"",system("pbpaste"))<CR>p
-execute pathogen#infect()
