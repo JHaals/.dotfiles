@@ -1,0 +1,116 @@
+# This is the default .slate file.
+# If no ~/.slate file exists this is the file that will be used.
+
+config defaultToCurrentScreen true
+config nudgePercentOf screenSize
+config resizePercentOf screenSize
+config windowHintsShowIcons true
+config windowHintsSpread true
+config windowHintsIgnoreHiddenWindows false
+
+#Monitor aliases
+alias mon-thunderbolt   2560x1440
+alias mon-laptop    1440x900
+
+alias sox screenOriginX
+alias soy screenOriginY
+alias ssx screenSizeX
+alias hssx screenSizeX/2
+alias tssx screenSizeX/3
+alias qssx screenSizeX/4
+alias fssx screenSizeX/5
+alias ssy screenSizeY
+alias hssy screenSizeY/2
+alias tssy screenSizeY/3
+alias qssy screenSizeY/4
+alias fssy screenSizeY/5
+
+#Position aliases
+
+alias fullscreen move ${sox};${soy} ${ssx};${ssy}
+alias master1 move ${sox};${soy} ${ssx}-${tssx}-${tssx};${ssy}
+alias master2 move ${sox}+${tssx};${soy} ${ssx}-${tssx}-${tssx};${ssy}
+bind ,:ctrl;alt ${master1}
+bind .:ctrl;alt ${master2}
+bind f:ctrl;alt ${fullscreen}
+#
+#alias leftThreeQuarters ${sox};${soy} (3*${qssx});${ssy}
+#alias leftTwoThirds ${sox};${soy} (2*${tssx});${ssy}
+#alias leftThreeFifths ${sox};${soy} (3*${fssx});${ssy}
+#alias leftHalf ${sox};${soy} ${hssx};${ssy}
+#alias leftTwoFifths ${sox};${soy} (2*${fssx});${ssy}
+#alias leftThird ${sox};${soy} ${tssx};${ssy}
+#alias leftQuarter ${sox};${soy} ${qssx};${ssy}
+#
+#alias topHalf ${sox};${soy} ${ssx};${hssy}
+#alias bottomHalf ${sox};${soy}+${hssy} ${ssx};${hssy}
+#alias bottomThird ${sox};${soy}+(2*${tssy}) ${ssx};${tssy}
+#alias bottomFourth ${sox};${soy}+(2*${tssy}) ${ssx};${tssy}
+#
+#alias rightThreeQuarters ${sox}+${qssx};${soy} $(3*${qssx});${ssy}
+#alias rightTwoThirds ${sox}+${tssx};${soy} ${ssx}-${tssx};${ssy}
+#alias rightThreeFifths ${sox}+(2*${fssx});${soy} (3*${fssx});${ssy}
+#alias rightHalf ${sox}+${hssx};${soy} ${hssx};${ssy}
+#alias rightTwoFifths ${sox}+(3*${fssx});${soy} (2*${fssx});${ssy}
+#alias rightThird ${sox}+${ssx}-${tssx};${soy} ${tssx};${ssy}
+#
+#alias topLeftQuarter ${sox};${soy} ${hssx};${ssy}
+#alias topRightQuarter ${sox}+${hssx};${soy} ${hssx};${hssy}
+#alias bottomLeftQuarter ${sox};${soy}+${hssy} ${hssx};${hssy}
+#alias bottomRightQuarter ${sox}+${hssx};${soy}+${hssy} ${hssx};${hssy}
+#
+#alias topRightTwoThirdsRightThreeFifths ${sox}+(2*${fssx});${soy} (3*${fssx});(2*${tssy})
+#alias bottomRightThirdRightThreeFifths ${sox}+(2*${fssx});${soy}+(2*${tssy}) (3*${fssx});${tssy}
+#
+#alias topLeftTwoThirdsLeftTwoFifths ${sox};${soy} (2*${fssx});(2*${tssy})
+#alias bottomLeftThirdLeftTwoFifths ${sox};${soy}+(2*${tssy}) (2*${fssx});${tssy}
+
+alias full move screenOriginX;screenOriginY screenSizeX;screenSizeY
+alias lefthalf move screenOriginX;screenOriginY screenSizeX/2;screenSizeY
+alias righthalf move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY
+alias topleft corner top-left resize:screenSizeX/2;screenSizeY/2
+alias topright corner top-right resize:screenSizeX/2;screenSizeY/2
+alias bottomleft corner bottom-left resize:screenSizeX/2;screenSizeY/2
+alias bottomright corner bottom-right resize:screenSizeX/2;screenSizeY/2
+alias app_low corner bottom-right resize:screenSizeX/3;screenSizeY/3
+alias app_high corner top-right resize:screenSizeX/3;screenSizeY/3
+alias app_middle ${sox}+(2*${tssx});${soy}+${tssy} ${tssx};${tssy}
+alias app_test ${sox}+(2*${tssx});${soy}+${tssy} ${tssx};${tssy}
+
+bind 1:ctrl;alt ${topleft}
+bind 2:ctrl;alt ${topright}
+bind 3:ctrl;alt ${bottomleft}
+bind 4:ctrl;alt ${bottomright}
+bind 5:ctrl;alt ${app_high}
+bind 6:ctrl;alt move ${app_middle}
+bind 7:ctrl;alt ${app_low}
+
+#bind 2:ctrl;alt push bottom bar-resize:screenSizeY/2
+bind w:ctrl;alt ${lefthalf}
+bind q:ctrl;alt ${full}
+bind e:ctrl;alt ${righthalf}
+
+layout mon-thunderbolt 'iTerm':REPEAT ${lefthalf}
+layout mon-thunderbolt 'Google Chrome':REPEAT ${righthalf}
+layout mon-laptop 'Spotify':Repeat ${full}
+
+#Bind to "quick layout"
+bind l:alt layout mon-thunderbolt
+bind s:ctrl;alt;cmd toggle 'Spotify'
+bind 1:ctrl;alt;cmd chain focus '1Password' | ${app_low}
+bind l:ctrl;alt shell wait path:/Users/jhaals '/Users/jhaals/lock.sh'
+
+# Throw Bindings
+bind w:ctrl;alt;cmd     throw 0 resize
+bind e:ctrl;alt;cmd     throw 1 resize
+
+# Focus Bindings
+bind l:ctrl;alt    focus right
+bind h:ctrl;alt     focus left
+bind k:ctrl;alt     focus up
+bind j:ctrl;alt     focus down
+
+# Window Hints
+bind s:ctrl;alt hint
+bind a:ctrl;alt grid padding:5 0:6,2 1:9,9
+bind r:ctrl;alt relaunch
