@@ -95,17 +95,15 @@ layout mon-thunderbolt 'Google Chrome':REPEAT ${righthalf}
 layout mon-laptop 'Spotify':Repeat ${full}
 
 #Bind to "quick layout"
-bind l:alt layout mon-thunderbolt
+#bind l:alt layout mon-thunderbolt
 bind s:ctrl;alt;cmd toggle 'Spotify'
 bind 1:ctrl;alt;cmd chain focus '1Password' | ${app_low}
-bind l:ctrl;alt shell wait path:/Users/jhaals '/Users/jhaals/lock.sh'
 
 # Throw Bindings
 bind w:ctrl;alt;cmd     throw 0 resize
 bind e:ctrl;alt;cmd     throw 1 resize
 
 # Focus Bindings
-bind l:ctrl;alt    focus right
 bind h:ctrl;alt     focus left
 bind k:ctrl;alt     focus up
 bind j:ctrl;alt     focus down
@@ -114,3 +112,4 @@ bind j:ctrl;alt     focus down
 bind s:ctrl;alt hint
 bind a:ctrl;alt grid padding:5 0:6,2 1:9,9
 bind r:ctrl;alt relaunch
+bind l:ctrl;alt shell /System/Library/Frameworks/ScreenSaver.framework/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine

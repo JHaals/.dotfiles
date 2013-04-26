@@ -5,6 +5,7 @@ export EDITOR='vim'
 export LC_CTYPE='UTF-8'
 export LC_ALL='en_US.UTF-8'
 export FACTERLIB=~/lib/facter:$FACTERLIB
+
 # Set to this to use case-sensitive completion
 # export CASE_SENSITIVE="true"
 
@@ -42,3 +43,4 @@ alias lock='/System/Library/Frameworks/ScreenSaver.framework/Resources/ScreenSav
 eval `gdircolors .dircolors`
 source /usr/local/bin/virtualenvwrapper_lazy.sh
 source .secrets.sh
+PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"

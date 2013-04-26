@@ -1,10 +1,29 @@
 syntax on
 execute pathogen#infect()
-filetype plugin indent on
-set backspace=2 " make backspace work like most other apps
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
 
+Bundle 'sjl/gundo.vim'
+Bundle 'kien/ctrlp.vim'
+Bundle 'klen/python-mode'
+Bundle 'scrooloose/syntastic'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'godlygeek/tabular'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'rodjek/vim-puppet'
+Bundle 'tpope/vim-surround'
+Bundle 'airblade/vim-gitgutter'
+Bundle 'ruby-vim/vim-ruby'
+Bundle 'motemen/git-vim'
+Bundle 'SirVer/ultisnips'
+Bundle 'Lokaltog/powerline'
+set rtp+=/Users/jhaals/.vim/bundle/powerline/powerline/bindings/vim
+filetype plugin indent on
+
+set laststatus=2
+set backspace=2 " make backspace work like most other apps
 set encoding=utf-8
-"colorscheme railscasts
 set background=dark
 colorscheme solarized
 set autoindent      " Indent same level as the previous line
