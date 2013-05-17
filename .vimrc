@@ -1,5 +1,4 @@
 syntax on
-execute pathogen#infect()
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
@@ -48,6 +47,7 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 autocmd FileType ruby setlocal ts=2 sts=2 sw=2
+autocmd FileType coffee setlocal ts=2 sts=2 sw=2
 set listchars=tab:»\ ,trail:·
 set list
 cmap w!! %!sudo tee > /dev/null %
@@ -93,3 +93,4 @@ match ExtraWhitespace /\s\+$/
 " On OSX
 vmap <D-c> y:call system("pbcopy", getreg("\""))<CR>
 nmap <D-v> :call setreg("\"",system("pbpaste"))<CR>p
+execute pathogen#infect()

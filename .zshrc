@@ -5,7 +5,6 @@ export EDITOR='vim'
 export LC_CTYPE='UTF-8'
 export LC_ALL='en_US.UTF-8'
 export FACTERLIB=~/lib/facter:$FACTERLIB
-
 # Set to this to use case-sensitive completion
 # export CASE_SENSITIVE="true"
 
@@ -20,7 +19,7 @@ export FACTERLIB=~/lib/facter:$FACTERLIB
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew zsh-syntax-highlighting)
+plugins=(git brew zsh-syntax-highlighting jira)
 
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
