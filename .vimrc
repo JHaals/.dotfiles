@@ -1,6 +1,7 @@
 syntax on
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
+execute pathogen#infect()
 Bundle 'gmarik/vundle'
 
 Bundle 'sjl/gundo.vim'
@@ -93,4 +94,3 @@ match ExtraWhitespace /\s\+$/
 " On OSX
 vmap <D-c> y:call system("pbcopy", getreg("\""))<CR>
 nmap <D-v> :call setreg("\"",system("pbpaste"))<CR>p
-execute pathogen#infect()
