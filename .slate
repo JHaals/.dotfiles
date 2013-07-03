@@ -109,7 +109,7 @@ bind k:ctrl;alt     focus up
 bind j:ctrl;alt     focus down
 
 # Window Hints
-bind s:ctrl;alt hint
+#bind s:ctrl;alt hint
 bind a:ctrl;alt grid padding:5 0:6,2 1:9,9
 bind r:ctrl;alt relaunch
 bind l:ctrl;alt shell /System/Library/Frameworks/ScreenSaver.framework/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine
