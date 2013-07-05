@@ -31,12 +31,13 @@ alias grep='grep --color'
 alias genpw='~/Dropbox/git/scripts/generate_password.py'
 alias ll='ls -la'
 alias vi='vim'
-alias google.py='~/management-scripts/google-apps/google.py'
+alias google.py='~/dev/management-scripts/google-apps/google.py'
 alias macvim='open -a MacVim'
 alias pushforreview='git push origin HEAD:refs/for/production'
 alias ls='gls --color=auto'
-alias jhaals='vim /opt/boxen/repo/modules/people/manifests'
+alias jhaals='subl /opt/boxen/repo/modules/people/manifests/jhaals'
 alias lock='/System/Library/Frameworks/ScreenSaver.framework/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine'
+alias repo='cd /opt/boxen/repo'
 
 [ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
 eval `gdircolors .dircolors`
