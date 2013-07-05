@@ -40,6 +40,6 @@ alias lock='/System/Library/Frameworks/ScreenSaver.framework/Resources/ScreenSav
 
 [ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
 eval `gdircolors .dircolors`
-source /usr/local/bin/virtualenvwrapper_lazy.sh
+source /opt/boxen/homebrew/bin/virtualenvwrapper.sh
 source .secrets.sh
 PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
