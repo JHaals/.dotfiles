@@ -18,6 +18,7 @@ Bundle 'ruby-vim/vim-ruby'
 Bundle 'motemen/git-vim'
 Bundle 'SirVer/ultisnips'
 Bundle 'Lokaltog/powerline'
+Bundle 'kien/rainbow_parentheses.vim'
 set rtp+=/Users/jhaals/.vim/bundle/powerline/powerline/bindings/vim
 filetype plugin indent on
 
@@ -90,6 +91,9 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
+
+"rainbow parantheses
+au VimEnter * RainbowParenthesesToggle
 
 " On OSX
 vmap <D-c> y:call system("pbcopy", getreg("\""))<CR>
