@@ -19,6 +19,7 @@ Bundle 'motemen/git-vim'
 Bundle 'SirVer/ultisnips'
 Bundle 'Lokaltog/powerline'
 Bundle 'kien/rainbow_parentheses.vim'
+Bundle 'tomtom/tcomment_vim'
 set rtp+=/Users/jhaals/.vim/bundle/powerline/powerline/bindings/vim
 filetype plugin indent on
 
@@ -74,7 +75,7 @@ map <Leader>e :SyntasticCheck<CR>
 
 map <Leader>n :set nonumber<CR>
 map <Leader>y "+y<CR>
-
+map <Leader>c <c-_><c-_>
 " Enable the mouse
 "set mouse=a
 
