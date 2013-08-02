@@ -1,7 +1,6 @@
 syntax on
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
-execute pathogen#infect()
 Bundle 'gmarik/vundle'
 
 Bundle 'sjl/gundo.vim'
@@ -14,13 +13,12 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'rodjek/vim-puppet'
 Bundle 'tpope/vim-surround'
 Bundle 'airblade/vim-gitgutter'
-Bundle 'ruby-vim/vim-ruby'
 Bundle 'motemen/git-vim'
 Bundle 'SirVer/ultisnips'
 Bundle 'Lokaltog/powerline'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'tomtom/tcomment_vim'
-set rtp+=/Users/jhaals/.vim/bundle/powerline/powerline/bindings/vim
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 filetype plugin indent on
 
 set laststatus=2
