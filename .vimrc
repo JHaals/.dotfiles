@@ -15,10 +15,11 @@ Bundle 'tpope/vim-surround'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'motemen/git-vim'
 Bundle 'SirVer/ultisnips'
-Bundle 'Lokaltog/powerline'
+"Bundle 'Lokaltog/powerline'
+Bundle 'bling/vim-airline'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'tomtom/tcomment_vim'
-set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+"set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 filetype plugin indent on
 
 set laststatus=2
