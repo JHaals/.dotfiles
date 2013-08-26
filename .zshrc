@@ -44,4 +44,5 @@ alias gs='git status'
 eval `gdircolors .dircolors`
 source /opt/boxen/homebrew/bin/virtualenvwrapper.sh
 source .secrets.sh
+export GOPATH=$HOME/go
 PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"

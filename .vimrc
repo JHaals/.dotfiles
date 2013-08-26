@@ -1,4 +1,6 @@
 syntax on
+filetype off
+filetype plugin indent on
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
@@ -15,12 +17,9 @@ Bundle 'tpope/vim-surround'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'motemen/git-vim'
 Bundle 'SirVer/ultisnips'
-"Bundle 'Lokaltog/powerline'
 Bundle 'bling/vim-airline'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'tomtom/tcomment_vim'
-"set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
-filetype plugin indent on
 
 set laststatus=2
 set backspace=2 " make backspace work like most other apps
