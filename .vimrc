@@ -1,6 +1,5 @@
 syntax on
 filetype off
-filetype plugin indent on
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
@@ -21,6 +20,7 @@ Bundle 'bling/vim-airline'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'tomtom/tcomment_vim'
 
+filetype plugin indent on
 set laststatus=2
 set backspace=2 " make backspace work like most other apps
 set encoding=utf-8
