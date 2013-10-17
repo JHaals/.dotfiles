@@ -17,8 +17,12 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'motemen/git-vim'
 Bundle 'SirVer/ultisnips'
 Bundle 'bling/vim-airline'
-Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'tomtom/tcomment_vim'
+"Bundle 'vim-scripts/paredit.vim'
+Bundle 'kien/rainbow_parentheses.vim'
+Bundle 'guns/vim-clojure-static'
+" Clojure
+Bundle 'tpope/vim-fireplace'
 
 filetype plugin indent on
 set laststatus=2
@@ -49,6 +53,7 @@ set softtabstop=4
 set expandtab
 autocmd FileType ruby setlocal ts=2 sts=2 sw=2
 autocmd FileType coffee setlocal ts=2 sts=2 sw=2
+autocmd FileType clojure setlocal ts=2 sts=2 sw=2
 set listchars=tab:»\ ,trail:·
 set list
 cmap w!! %!sudo tee > /dev/null %
