@@ -102,3 +102,12 @@ au VimEnter * RainbowParenthesesToggle
 " On OSX
 vmap <D-c> y:call system("pbcopy", getreg("\""))<CR>
 nmap <D-v> :call setreg("\"",system("pbpaste"))<CR>p
+
+" highlight 80char limit
+let &colorcolumn=join(range(81,999),",")
+
+" Use ag for ctrlp
+if executable('ag')
+    set grepprg=ag\ --nogroup\ --nocolor
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
