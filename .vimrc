@@ -18,10 +18,10 @@ Bundle 'motemen/git-vim'
 Bundle 'SirVer/ultisnips'
 Bundle 'bling/vim-airline'
 Bundle 'tomtom/tcomment_vim'
-"Bundle 'vim-scripts/paredit.vim'
 Bundle 'kien/rainbow_parentheses.vim'
-Bundle 'guns/vim-clojure-static'
+Bundle 'Valloric/YouCompleteMe'
 " Clojure
+Bundle 'guns/vim-clojure-static'
 Bundle 'tpope/vim-fireplace'
 
 filetype plugin indent on
@@ -98,6 +98,7 @@ match ExtraWhitespace /\s\+$/
 
 "rainbow parantheses
 au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadSquare
 
 " On OSX
 vmap <D-c> y:call system("pbcopy", getreg("\""))<CR>
@@ -111,3 +112,7 @@ if executable('ag')
     set grepprg=ag\ --nogroup\ --nocolor
     let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
+
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
