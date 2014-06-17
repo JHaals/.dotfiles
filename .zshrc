@@ -25,7 +25,7 @@ source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
 
 # Customize to your needs...
-export PATH=/usr/local/bin:/usr/local/sbin:/usr/sbin:/usr/bin:/bin:/sbin:/usr/X11/bin:
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/sbin:/usr/bin:/bin:/sbin:/usr/X11/bin:$HOME/go/bin
 alias l='ls -hlAF' # Fancy listing of files and directories
 alias grep='grep --color'
 alias genpw='~/Dropbox/git/scripts/generate_password.py'
@@ -46,3 +46,7 @@ source /opt/boxen/homebrew/bin/virtualenvwrapper.sh
 source .secrets.sh
 export GOPATH=$HOME/go
 PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
+alias gfr='git fetch upstream && git rebase upstream/master'
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"

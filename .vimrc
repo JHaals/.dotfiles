@@ -18,12 +18,14 @@ Bundle 'motemen/git-vim'
 Bundle 'SirVer/ultisnips'
 Bundle 'bling/vim-airline'
 Bundle 'tomtom/tcomment_vim'
-Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'jmcantrell/vim-virtualenv'
+Bundle 'tpope/vim-markdown'
 " Clojure
 Bundle 'guns/vim-clojure-static'
 Bundle 'tpope/vim-fireplace'
 
+Bundle 'kien/rainbow_parentheses.vim'
 filetype plugin indent on
 set laststatus=2
 set backspace=2 " make backspace work like most other apps
@@ -54,6 +56,7 @@ set expandtab
 autocmd FileType ruby setlocal ts=2 sts=2 sw=2
 autocmd FileType coffee setlocal ts=2 sts=2 sw=2
 autocmd FileType clojure setlocal ts=2 sts=2 sw=2
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2
 set listchars=tab:»\ ,trail:·
 set list
 cmap w!! %!sudo tee > /dev/null %
@@ -100,6 +103,20 @@ match ExtraWhitespace /\s\+$/
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadSquare
 
+let g:rbpt_colorpairs = [
+    \['white', '#FFFFFF'],
+    \['darkcyan', '#00FFFF'],
+    \['darkmagenta', '#FF00FF'],
+    \['darkblue', '#0000FF'],
+    \['darkyellow', '#FFFF00'],
+    \['magenta', '#FF00FF'],
+    \['darkgreen', '#00FF00'],
+    \['darkred', '#FF0000'],
+    \]
+
+" Set this to the number of colors available.
+let g:rbpt_max = 8
+
 " On OSX
 vmap <D-c> y:call system("pbcopy", getreg("\""))<CR>
 nmap <D-v> :call setreg("\"",system("pbpaste"))<CR>p
@@ -116,3 +133,9 @@ endif
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+set guifont=Source\ Code\ Pro:h18
+
+if $VIM_CRONTAB == "true"
+set nobackup
+set nowritebackup
+endif
