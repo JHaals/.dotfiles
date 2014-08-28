@@ -19,7 +19,7 @@ export FACTERLIB=~/lib/facter:$FACTERLIB
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew zsh-syntax-highlighting jira git-extras)
+plugins=(git brew zsh-syntax-highlighting jira git-extras bundler)
 
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
@@ -31,7 +31,6 @@ alias grep='grep --color'
 alias genpw='~/Dropbox/git/scripts/generate_password.py'
 alias ll='ls -la'
 alias vi='vim'
-alias google.py='~/dev/management-scripts/google-apps/google.py'
 alias macvim='open -a MacVim'
 alias pushforreview='git push origin HEAD:refs/for/production'
 alias ls='gls --color=auto'
@@ -45,8 +44,9 @@ eval `gdircolors .dircolors`
 source /opt/boxen/homebrew/bin/virtualenvwrapper.sh
 source .secrets.sh
 export GOPATH=$HOME/go
+export GOROOT=`go env GOROOT`
+
 PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
 alias gfr='git fetch upstream && git rebase upstream/master'
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+alias sub="subl -n ."

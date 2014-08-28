@@ -18,7 +18,7 @@ Bundle 'motemen/git-vim'
 Bundle 'SirVer/ultisnips'
 Bundle 'bling/vim-airline'
 Bundle 'tomtom/tcomment_vim'
-Bundle 'Valloric/YouCompleteMe'
+"Bundle 'Valloric/YouCompleteMe'
 Bundle 'jmcantrell/vim-virtualenv'
 Bundle 'tpope/vim-markdown'
 " Clojure
