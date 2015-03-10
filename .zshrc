@@ -1,52 +1,67 @@
-# Path to your oh-my-zsh configuration.
 export ZSH=$HOME/.oh-my-zsh
-export ZSH_THEME='simple'
-export EDITOR='vim'
-export LC_CTYPE='UTF-8'
-export LC_ALL='en_US.UTF-8'
-export FACTERLIB=~/lib/facter:$FACTERLIB
-# Set to this to use case-sensitive completion
-# export CASE_SENSITIVE="true"
+ZSH_THEME="simple"
 
-# Comment this out to disable weekly auto-update checks
-# export DISABLE_AUTO_UPDATE="true"
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
 
-# Uncomment following line if you want to disable colors in ls
-# export DISABLE_LS_COLORS="true"
+# Uncomment the following line to disable bi-weekly auto-update checks.
+# DISABLE_AUTO_UPDATE="true"
 
-# Uncomment following line if you want to disable autosetting terminal title.
-# export DISABLE_AUTO_TITLE="true"
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew zsh-syntax-highlighting jira git-extras bundler)
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# HIST_STAMPS="mm/dd/yyyy"
+
+plugins=(git zsh-syntax-highlighting vagrant docker)
 
 source $ZSH/oh-my-zsh.sh
-unsetopt correct_all
+#source ~/.do-setup/env.sh
+#export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+source ~/.secrets
 
-# Customize to your needs...
-export PATH=/usr/local/bin:/usr/local/sbin:/usr/sbin:/usr/bin:/bin:/sbin:/usr/X11/bin:$HOME/go/bin
-alias l='ls -hlAF' # Fancy listing of files and directories
-alias grep='grep --color'
-alias genpw='~/Dropbox/git/scripts/generate_password.py'
-alias ll='ls -la'
-alias vi='vim'
-alias macvim='open -a MacVim'
-alias pushforreview='git push origin HEAD:refs/for/production'
+eval `gdircolors ~/.dircolors-solarized/dircolors.256dark`
+export EDITOR=vim
 alias ls='gls --color=auto'
-alias jhaals='vim /opt/boxen/repo/modules/people/manifests/jhaals'
 alias lock='/System/Library/Frameworks/ScreenSaver.framework/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine'
-alias repo='cd /opt/boxen/repo'
 alias gs='git status'
-
-[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
-eval `gdircolors .dircolors`
-source /opt/boxen/homebrew/bin/virtualenvwrapper.sh
-source .secrets.sh
-export GOPATH=$HOME/go
-export GOROOT=`go env GOROOT`
-
-PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
 alias gfr='git fetch upstream && git rebase upstream/master'
-
 alias sub="subl -n ."
+alias v='vagrant'
+alias t='tugboat'
+export VAGRANT_DEFAULT_PROVIDER='vmware_fusion'
+
+eval "$(rbenv init -)"
+#alias chef-shell='eval "$(chef shell-init zsh)"'
+export GOPATH="/Users/jhaals"
+function pb() {
+    branch=$(git rev-parse --abbrev-ref HEAD)
+    if echo $branch |grep -q master; then
+        echo 'invalid branch master'
+        return
+    fi
+    git push --set-upstream origin $branch
+}
+alias PR='hub pull-request'
+
+# added by travis gem
+[ -f /Users/jhaals/.travis/travis.sh ] && source /Users/jhaals/.travis/travis.sh
