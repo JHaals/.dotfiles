@@ -32,7 +32,7 @@ ZSH_THEME="simple"
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # HIST_STAMPS="mm/dd/yyyy"
 
-plugins=(git zsh-syntax-highlighting vagrant docker)
+plugins=(git zsh-syntax-highlighting vagrant docker sublime)
 
 source $ZSH/oh-my-zsh.sh
 #source ~/.do-setup/env.sh
@@ -48,8 +48,9 @@ alias gfr='git fetch upstream && git rebase upstream/master'
 alias sub="subl -n ."
 alias v='vagrant'
 alias t='tugboat'
-export VAGRANT_DEFAULT_PROVIDER='vmware_fusion'
-
+#export VAGRANT_DEFAULT_PROVIDER='vmware_fusion'
+export VAGRANT_DEFAULT_PROVIDER='virtualbox'
+export JAVA_HOME=`/usr/libexec/java_home`
 eval "$(rbenv init -)"
 #alias chef-shell='eval "$(chef shell-init zsh)"'
 export GOPATH="/Users/jhaals"
@@ -62,6 +63,7 @@ function pb() {
     git push --set-upstream origin $branch
 }
 alias PR='hub pull-request'
+alias sr='ssh-keygen -R'
 
 # added by travis gem
 [ -f /Users/jhaals/.travis/travis.sh ] && source /Users/jhaals/.travis/travis.sh
